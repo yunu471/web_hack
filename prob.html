@@ -1,0 +1,7 @@
+encrypted_message = "{2J6CfLtaDJ0#_%N"
+flag = ""
+for i in range(len(encrypted_message)):
+    decrypted_ascii = (ord(encrypted_message[i]) - 14) % 94 + 33 if 33 <= ord(encrypted_message[i]) <= 126 else ord(encrypted_message[i])
+    flag += chr(decrypted_ascii)
+
+print(flag)

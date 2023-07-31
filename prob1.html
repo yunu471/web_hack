@@ -1,0 +1,43 @@
+
+<html>
+<head>
+	<title>FLAG Challenge</title>
+	<script>
+        function enc(x) {
+            var s=[];
+            for(var i=0;i<x.length;i++) {
+                var j=x.charCodeAt(i);'''j길이의 문자열의 i번째로 오는 값을 '''
+                if((j>=33)&&(j<=126)) {
+                    s[i]=String.fromCharCode(33+((j+ 14)%94));
+                } else {
+                    s[i]=String.fromCharCode(j);
+                }
+            }
+            return s.join('');
+        }
+
+        function checkFlag() {
+            var flag = document.getElementById("flag").value;
+            var message = enc(flag)
+            if ("{2J6CfLtaDJ0#_%N" == message) {
+                alert("Correct flag!");
+            } else {
+                alert("try again!");
+            }
+        }
+
+
+	</script>
+</head>
+<body>
+	<h1>Do you know Flag?</h1>
+	<p>Flag is so easy</p>
+	<label for="flag">Enter the flag:</label>
+	<input type="text" id="flag">
+	<button onclick="checkFlag()">Submit</button>
+</body>
+</html>
+
+
+
+
